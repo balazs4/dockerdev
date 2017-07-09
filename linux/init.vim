@@ -36,10 +36,17 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'airblade/vim-gitgutter'
   Plug 'easymotion/vim-easymotion'
   Plug 'maxboisvert/vim-simple-complete'
-
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_custom_ignore = 'node_modules\|git'
 map <C-b> :NERDTreeToggle<CR>
+silent! color onedark
+let g:airline_theme='onedark'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#tabline#fnamemod = ':t'

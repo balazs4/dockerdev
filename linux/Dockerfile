@@ -8,6 +8,9 @@ ENV HOME /home/dev
 ENV USER dev
 ENV TERM screen-256color
 ENV EDITOR nvim
+ENV LC_ALL=en_US.UTF-8
+ENV LANG=en_US.UTF-8
+ENV LANGUAGE=en_US.UTF-8
 USER dev
 WORKDIR /home/dev
 
@@ -19,4 +22,15 @@ COPY init.vim "$HOME/.config/nvim/init.vim"
 RUN sudo chown -R dev:users $HOME
 RUN nvim --headless +PlugInstall +qall &&  echo 'color onedark' >> "$HOME/.config/nvim/init.vim"
 
-CMD bash
+## powerline
+RUN sudo apk add --no-cache python3
+RUN sudo pip3 install powerline-status powerline-gitstatus
+COPY bashrc "$HOME/.bashrc"
+COPY bash_profile "$HOME/.bash_profile"
+COPY powerline "$HOME/.config/powerline"
+
+## tmux
+COPY tmux.conf "$HOME/.tmux.conf"
+
+RUN sudo chown -R dev:users $HOME
+CMD tmux -u
