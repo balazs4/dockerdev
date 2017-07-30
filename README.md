@@ -5,12 +5,14 @@
 
 ## Content
 + alpine linux
-+ bash
-+ neovim
++ zsh
++ vim
 + tmux
 + git
 + ssh
 + powerline =)
 
 ## ToDo
-+ [ ] language specific (neo)vim templates
++ [ ] dev platform (nodejs, yarn, prettier, pm2, nodemon, chokidar)
++ [ ] iaas platform (awscli)
++ [ ] maybe java and/or python ...meh! :/
