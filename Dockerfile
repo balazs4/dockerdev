@@ -3,7 +3,7 @@ FROM node:alpine
 ## node
 RUN yarn global add prettier chokidar-cli serve
 
-RUN apk add --update --no-cache zsh vim tmux git curl wget sudo htop ncurses openssl grep jq py-pip
+RUN apk add --update --no-cache zsh vim tmux git curl wget sudo htop ncurses openssl grep editorconfig jq py-pip
 RUN adduser -S dev -h /home/dev -s /bin/zsh -u 1001 -D -G users
 RUN echo 'dev ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
