@@ -1,6 +1,6 @@
 FROM alpine:edge
 
-RUN apk add --update --no-cache zsh vim tmux git curl wget sudo htop ncurses openssl grep
+RUN apk add --update --no-cache zsh vim tmux git curl wget sudo htop ncurses openssl grep editorconfig
 RUN adduser -S dev -h /home/dev -s /bin/zsh -u 1000 -D -G users
 RUN echo 'dev ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
